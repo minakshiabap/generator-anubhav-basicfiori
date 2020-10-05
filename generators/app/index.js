@@ -31,6 +31,12 @@ module.exports = class extends Generator {
         message: "What is the namespace of your project?",
         default: "anubhav.app",
       },
+      {
+        type: "input",
+        name: "projectNamespaceModule",
+        message: "What is the namespace of your project?",
+        default: "anubhav/app",
+      },
     ]).then((answers) => {
       if (answers.newDir) {
         this.destinationRoot(`${answers.projectName}`);

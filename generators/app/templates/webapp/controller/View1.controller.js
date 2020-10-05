@@ -1,6 +1,6 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"tcs/fin/ap/util/formatter"
+	"<%= projectNamespaceModule %>/util/formatter"
 ], function(Controller, Formatter) {
 	"use strict";
 
@@ -13,12 +13,12 @@ sap.ui.define([
 		 */
 		onInit: function() {
 			//get the router object from Component.js
-			this.oRouter = this.getOwnerComponent().getRouter();	
+			this.oRouter = this.getOwnerComponent().getRouter();
 		},
 		onItemSelect: function(oEvent){
 			var oSelectedItem = oEvent.getParameter("listItem");
 			var sTitle = oSelectedItem.getTitle();
-			this.onNext(sTitle);	
+			this.onNext(sTitle);
 		},
 		oRouter: null,
 		onSelectChange: function(oEvent){
@@ -31,7 +31,7 @@ sap.ui.define([
 			//if we have 100 fields, we will have 100 lines of code and multiply
 			// var sTitle = oList.getSelectedItem().getTitle();
 			// this.onNext(sTitle);
-			
+
 			//Technique 2: Bind the complete View 2 with the element selected
 			// --> /fruits/2 -- {name: '', color: '', ....}
 			var sPath = oList.getSelectedItem().getBindingContextPath();
@@ -39,7 +39,7 @@ sap.ui.define([
 			this.onNext(sIndex);
 			// var oView2 = this.getView().getParent().getParent().getDetailPages()[1];
 			// oView2.bindElement(sPath);
-			
+
 		},
 		onSearch: function(oEvent){
 			//Step 1: get the value entered by user on screen
@@ -68,14 +68,14 @@ sap.ui.define([
 			//Step 1: Get The Container object for this view
 			//Now it is Split App Container Object
 			// var oParent = this.getView().getParent().getParent();
-			
+
 			// //Step 2: go to view 1 from parent
 			// var oView2 = oParent.getDetailPages()[1];
 			// //Step 3: get the child of the view1 (viz. search field )
 			// var oPage = oView2.getContent()[0];
 			// //Step 4: get the value
 			// oPage.setTitle(sTitle);
-			
+
 			// //Step 2: use that to navigate to second view
 			// oParent.toDetail("idView2");
 		}
