@@ -1,0 +1,54 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="<%= projectNamespace %>.controller.View1"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="View 1">
+		<content>
+			<!--<Button text="Go To Next" press="onNext"></Button>-->
+			<SearchField id="idSearch" search="onSearch" liveChange="onSearch"></SearchField>
+			<List items="{ path: '/fruits',
+						   sorter: {path: 'name'}
+			}" mode="SingleSelectMaster" itemPress="onItemSelect" id="idList"
+				  selectionChange="onSelectChange">
+				<items>
+					<ObjectListItem intro="{type}" title="{name}" icon="{imageURL}"
+								    number="{price}" numberUnit="{currency}">
+						<firstStatus>
+							<ObjectStatus text="{status}" state="{
+								path: 'status', formatter: '.formatter.getStatus'
+							}"></ObjectStatus>
+						</firstStatus>
+					</ObjectListItem>
+					<!--<DisplayListItem label="Apple" value="Best antibiotic on this planet"></DisplayListItem>-->
+					<!--<StandardListItem icon="https://cdn.mos.cms.futurecdn.net/42E9as7NaTaAi4A6JcuFwG.jpg" title="Banana" description="Powerhouse of potassium, Lactic Restore"></StandardListItem>-->
+					<!--<InputListItem>-->
+					<!--	<content>-->
+					<!--			<HBox>-->
+					<!--				<Text text="How many box of cherries you want" class="sapUiSmallMarginEnd"></Text>-->
+					<!--				<Input></Input>-->
+					<!--			</HBox>-->
+					<!--	</content>-->
+					<!--</InputListItem>-->
+					<!--<ObjectListItem title="Pineapple" -->
+					<!--	intro="Good for shining and healthy skin" icon="https://5.imimg.com/data5/PW/ND/MY-46595757/fresh-pineapple-281kg-29-500x500.png"-->
+					<!--	number="120 INR" numberUnit="per pc.">-->
+					<!--</ObjectListItem>-->
+					<!--<CustomListItem>-->
+					<!--	<content>-->
+					<!--		<Switch type="AcceptReject" width="400px" customTextOn="Home Delivery will be done" customTextOff="Pick up"></Switch>-->
+					<!--	</content>-->
+					<!--</CustomListItem>-->
+					<!--<FeedListItem sender="Donald Trumph" -->
+					<!--text="Can republicans do that again?" timestamp="Wed, 2nd Sep 2020" icon="https://static01.nyt.com/newsgraphics/2019/08/01/candidate-pages/83a20725a0b8ef8e0c2ce9dc305614773e3b1a8d/trump.jpg"></FeedListItem>-->
+					<!--<ActionListItem text="Order Now!!"></ActionListItem>-->
+					
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Toolbar></Toolbar>
+		</footer>
+		<headerContent>
+			<Button icon="sap-icon://action" press="onNext"></Button>
+		</headerContent>
+	</Page>
+
+</mvc:View>

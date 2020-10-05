@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Table items="{/suppliers}">
+		<columns>
+			<Column>
+				<Text text="Name"></Text>
+			</Column>
+			<Column>
+				<Text text="City"></Text>
+			</Column>
+			<Column minScreenWidth="Tablet">
+				<Text text="Since When"></Text>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="Contact Person"></Text>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{name}"></Text>
+					<Input value="{city}"></Input>
+					<Text text="{sinceWhen}"></Text>
+					<Text text="{contactPerson}"></Text>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

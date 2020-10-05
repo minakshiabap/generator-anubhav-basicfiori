@@ -1,0 +1,51 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="<%= projectNamespace %>.controller.View2"
+	xmlns:f="sap.ui.layout.form" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="View 2" showNavButton="true" navButtonPress="onBack">
+		<content>
+			<!--<Button text="Back" press="onBack"></Button>-->
+			<ObjectHeader title="{name}" intro="{healthBenefit}" 
+			              number="{price}" numberUnit="{currency}" icon="{imageURL}"></ObjectHeader>
+			<IconTabBar>
+				<items>
+					<IconTabFilter text="Additional Info" key="" icon="sap-icon://home">
+						<content>
+							<f:SimpleForm>
+								<f:content>
+									<Label text="Color"></Label>
+									<Text text="{color}"></Text>
+									<Label text="Type"></Label>
+									<Text text="{type}"></Text>
+									<Label text="Status"></Label>
+									<Text text="{status}"></Text>
+								</f:content>
+							</f:SimpleForm>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter text="Suppliers" key="" icon="sap-icon://supplier">
+						<content>
+							<core:Fragment fragmentName="<%= projectNamespace %>.fragments.supplierTable" type="XML"></core:Fragment>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter text="Cities" key="" icon="sap-icon://arrow-down">
+						<Select items="{/cities}">
+							<core:Item key="{name}" text="{name}"></core:Item>
+						</Select>
+						<ComboBox items="{/cities}">
+							<core:Item key="{name}" text="{name}"></core:Item>
+						</ComboBox>
+						<MultiComboBox items="{/cities}">
+							<core:Item key="{name}" text="{name}"></core:Item>
+						</MultiComboBox>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer />
+				<Button text="Save" press="onSave" type="Accept"></Button>
+				<Button text="Cancel" press="onCancel" type="Reject"></Button>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

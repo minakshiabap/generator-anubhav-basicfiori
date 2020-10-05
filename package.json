@@ -1,0 +1,79 @@
+{
+  "name": "generator-anubhav-basicfiori",
+  "version": "1.0.0",
+  "description": "Yeoman Generator Basic Fiori App",
+  "homepage": "https://www.youtube.com/channel/UCzEPlO_nyhiE1MkZiufl9iw",
+  "author": {
+    "name": "Anubhav Oberoy",
+    "email": "anubhav.abap@gmail.com",
+    "url": "https://www.youtube.com/channel/UCzEPlO_nyhiE1MkZiufl9iw"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "anubhav-oberoy",
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.6.0",
+    "eslint-config-xo": "^0.29.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "jest": "^25.4.0",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^2.4.1"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "yeoman-generator": "^4.11.0",
+    "yosay": "^2.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "jest"
+  },
+  "repository": "minakshiabap/generator-anubhav-basicfiori",
+  "license": "Apache-2.0"
+}
